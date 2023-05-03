@@ -1,38 +1,447 @@
-.App {
-  text-align: center;
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+    height: 100vh;
+    display: flex;
+    background-color: #020230;
+    color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+    width: 75%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230), url("./assets/bg.jpeg") center;
+    display: flex;
+    flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.top {
+    height: 50%;
+    position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.timer {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 10px;
+    left: 80px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bottom {
+    height: 50%;
+}
+
+.trivia {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.question {
+    width: 80%;
+    background: linear-gradient(#100241, black);
+    border: 2px solid white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.answers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.answer {
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(#0e0124, #22074d);
+    border: 1px solid white;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 10px 20px 10px;
+    cursor: pointer;
+}
+
+.answer:hover,
+.answer.active {
+    background: mediumblue;
+}
+
+.answer.correct {
+    animation: correct 3s ease forwards;
+}
+
+@keyframes correct {
+
+    0%,
+    22%,
+    42% {
+        background: mediumblue;
+    }
+
+    20%,
+    40%,
+    60% {
+        background: linear-gradient(#0e0124,
+                #22074d);
+    }
+
+    62%,
+    100% {
+        background: green;
+    }
+}
+
+.answer.wrong {
+    animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+
+    0%,
+    22%,
+    42% {
+        background: mediumblue;
+    }
+
+    20%,
+    40%,
+    60% {
+        background: linear-gradient(#0e0124,
+                #22074d);
+    }
+
+    62%,
+    100% {
+        background: crimson;
+    }
+}
+
+.pyramid {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moneyList {
+    list-style: none;
+    width: 100%;
+    padding: 20px;
+}
+
+.moneyListItem {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.moneyListItem.active {
+    background-color: teal;
+}
+
+.moneyListItemNumber {
+    font-size: 18px;
+    font-weight: 100;
+    width: 30%;
+}
+
+.moneyListItemAmount {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.earnedContent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.earnedContent.congrats {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./assets/congrats.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.earnedContent .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.earnedContent .content .endText {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.earnedContent .content h3.endText {
+    font-weight: 300;
+}
+
+.earnedContent .content .tryAgain {
+    padding: 12px 0;
+    width: 20%;
+    background: mediumblue;
+    color: #eee;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 1s ease;
+}
+
+.earnedContent .content .tryAgain:hover {
+    background: linear-gradient(#100241, black);
+}
+
+.start {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./assets/giphy.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.start .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.start .content .github {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    color: #eee;
+}
+
+.start .content .github a {
+    text-decoration: none;
+    color: #eee;
+    background: #22074d;
+    padding: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.6s ease all;
+}
+
+.start .content .github a:hover {
+    color: #22074d;
+    background: #eee;
+}
+
+.start .content .wrapper {
+    width: 400px;
+    height: auto;
+    background-color: #22074dbc;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.start .content .wrapper label {
+    color: #eee;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-left: 5px;
+    margin-bottom: 5px;
+
+}
+
+.start .content .wrapper input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    padding: 0 1rem;
+    background-color: #eee;
+    border: none;
+    border-radius: 7px;
+    color: #22074d;
+    font-size: 1rem;
+    caret-color: #22074d;
+}
+
+.start .content .wrapper input::placeholder {
+    font-size: 0.9rem;
+    color: #22074d;
+}
+
+.start .content .wrapper code {
+    color: crimson;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+
+.start .content .wrapper .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.start .content .wrapper button {
+    padding: 12px 0;
+    width: 50%;
+    background: #0000cd;
+    color: #eee;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 1s ease;
+}
+
+.start .content .wrapper button:hover {
+    background: linear-gradient(#100241, black);
+}
+
+@media screen and (max-width: 767px) {
+    .start .content .wrapper {
+        width: 95%;
+    }
+
+    .main {
+        width: 80%;
+    }
+
+    .pyramid {
+        width: 20%;
+    }
+
+    .moneyList {
+        padding: 20px 5px;
+    }
+
+    .moneyListItem {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .moneyListItemNumber {
+        display: none;
+    }
+
+    .moneyListItemAmount {
+        font-size: 11px;
+    }
+
+    .top {
+        height: 50%;
+        position: relative;
+    }
+
+    .timer {
+        width: 50px;
+        height: 50px;
+        border: 3px solid white;
+        font-size: 20px;
+        font-weight: 500;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .bottom {
+        height: 50%;
+    }
+
+    .question {
+        width: 90%;
+        padding: 20px 15px;
+        border-radius: 10px;
+        font-size: 17px;
+    }
+
+    .answers {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .answer {
+        width: 40%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(#0e0124, #22074d);
+        border: 1px solid white;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 300;
+        margin: 0 10px 20px 10px;
+        cursor: pointer;
+    }
+
+    .earnedContent .content .endText {
+        font-size: 18px;
+    }
+
+    .earnedContent .content .tryAgain {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:1024px) and (min-width:768px) {
+    .moneyListItemNumber {
+        font-size: 15px;
+        font-weight: 100;
+        width: 30%;
+    }
+
+    .moneyListItemAmount {
+        font-size: 18px;
+        font-weight: 300;
+    }
 }
