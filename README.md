@@ -32,7 +32,8 @@ If you answer all the questions correctly, you will become a millionaire!
 
 You can try the app live on [live Demo](https://signorquiz.vercel.app/).
 
-<img src="https://github.com/Signor1/trivia_game/blob/b5d56e9727262d53ed285cf138fdf450ee7f790e/Trivia-Game2.png" width="50%" height="400"/>
+<img src="https://github.com/Signor1/trivia_game/blob/b5d56e9727262d53ed285cf138fdf450ee7f790e/Trivia-Game2.png" width="100%" height="400"/>
+<img src="https://github.com/Signor1/trivia_game/blob/7a20bc9c80645a6454f71793dbaaf81acaf472f3/Trivia-Game3.png" width="100%" height="400"/>
 
 ## Technologies Used
 
