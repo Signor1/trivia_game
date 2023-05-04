@@ -1,6 +1,7 @@
-<img src="https://github.com/Signor1/trivia_game/blob/4f08c1f18ca9d76f9d2ae78466cee8f308cbd731/Trivia-Game1.png" width="100%" height="400"/>
+
 # Who Wants to Be a Millionaire - Trivia Quiz
 
+<img src="https://github.com/Signor1/trivia_game/blob/4f08c1f18ca9d76f9d2ae78466cee8f308cbd731/Trivia-Game1.png" width="100%" height="400"/>
 Welcome to the Who Wants to Be a Millionaire - Trivia Quiz! This is a React.js app that replicates the popular game show "Who Wants to Be a Millionaire". You can play the game and test your knowledge in different categories such as history, science, music, and more!
 
 ## Table of Contents
